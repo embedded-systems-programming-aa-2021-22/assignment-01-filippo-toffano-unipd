@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <string>
 using std::cout;
 using std::endl;
@@ -16,6 +17,8 @@ void print_vector(vector<int> vector_lenght);
 vector<int> string_lengths(vector<string> length_argoument_vector);
 string longest_string(vector<string> longest_string_vector);
 string shortest_string(vector<string> shortest_string_vector);
+string alpha_first_string(vector<string> vector_string);
+string alpha_last_string(vector<string> vector_string); 
 
 int main()
 {
@@ -49,11 +52,11 @@ int main()
 
 	// 5. write a function "alpha_first_string" that
 	// returns lexicographically first string in a vector of strings
-	// cout << "Lexicographically first string: " << alpha_first_string(string_v) << endl;
+	cout << "Lexicographically first string: " << alpha_first_string(string_v) << endl;
 
 	// 6. write a function "alpha_last_string" that
 	// returns lexicographically last string in a vector of strings
-	// cout << "Lexicographically last string: " << alpha_last_string(string_v) << endl;
+	cout << "Lexicographically last string: " << alpha_last_string(string_v) << endl;
 
 	return 0;
 }
@@ -112,8 +115,19 @@ string shortest_string(vector<string> shortest_string_vector){
 	return shortest_string_vector[pos_shortest];
 }
 
+string alpha_first_string(vector<string> vector_string){
+	
+	sort(vector_string.begin(), vector_string.end());
 
+	return vector_string.front();
+}
 
+string alpha_last_string(vector<string> vector_string){
+
+	sort(vector_string.begin(), vector_string.end());
+
+	return vector_string.back();
+}
 
 
 
