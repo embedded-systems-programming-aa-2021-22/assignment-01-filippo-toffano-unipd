@@ -10,7 +10,7 @@ using std::string;
 
 // Function definition:
 
-void print_vector(vector<string> &vector_to_print){
+void print_vector(const vector<string> &vector_to_print){
 	cout<<"{";
 	for(uint i = 0; i < vector_to_print.size(); i++){
 		cout<<" "<<vector_to_print[i];
@@ -18,7 +18,7 @@ void print_vector(vector<string> &vector_to_print){
 	cout<<" }"<<endl;
 }
 
-void print_vector(vector<int> &vector_lenght){
+void print_vector(const vector<int> &vector_lenght){
 	cout<<"{";
 	for(uint i = 0; i < vector_lenght.size(); i++){
 		cout<<" "<< vector_lenght[i];
@@ -26,7 +26,7 @@ void print_vector(vector<int> &vector_lenght){
 	cout<<" }"<<endl;	
 }
 
-vector<int> string_lengths(vector<string> &length_argoument_vector){
+vector<int> string_lengths(const vector<string> &length_argoument_vector){
 	vector<int> lengh_argoument;
 	for(uint i = 0; i < length_argoument_vector.size(); i++){
 		lengh_argoument.push_back(length_argoument_vector[i].size());
@@ -34,7 +34,7 @@ vector<int> string_lengths(vector<string> &length_argoument_vector){
 	return lengh_argoument;
 }
 
-string longest_string(vector<string> &longest_string_vector){
+string longest_string(const vector<string> &longest_string_vector){
 	uint longest_string = longest_string_vector[0].size();
 	uint pos_longest{0};
 
@@ -48,7 +48,7 @@ string longest_string(vector<string> &longest_string_vector){
 	return longest_string_vector[pos_longest];
 }
 
-string shortest_string(vector<string> &shortest_string_vector){
+string shortest_string(const vector<string> &shortest_string_vector){
 	uint shortest_string = shortest_string_vector[0].size();
 	uint pos_shortest{0};
 
